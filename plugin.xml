@@ -3,7 +3,7 @@
     id="com.finebrain.janrain.engage"
     version="0.0.1">
 
-    <name>phonegap-JREngage</name>
+    <name>JREngage</name>
     <description>Janrain Engage for IOS Plugin</description>
     <license>BSD</license>
     <keywords>cordova,janrain</keywords>
@@ -18,243 +18,245 @@
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
         	<feature name="JREngage">
-        		<param name="ios-package" value="JREngage"/>
+        		<param name="ios-package" value="JREngagePhonegapPlugin"/>
         	</feature>
         </config-file>
+
+        <!--framework src="Foundation.framework" /-->
+        <framework src="security.framework" weak="true"/>
+        <framework src="uikit.framework" weak="true" />
+        <framework src="messageui.framework"  weak="true"/>
+
         <header-file src="src/ios/JREngage/Classes/JRActivityObject.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JRActivityObject.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JRActivityObject.m" target-dir="JREngage/Classes"  compiler-flags="-fno-objc-arc" />
         <header-file src="src/ios/JREngage/Classes/JREngage+CustomInterface.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JREngage+CustomInterface.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JREngage+CustomInterface.m" target-dir="JREngage/Classes"  compiler-flags="-fno-objc-arc" />
         <header-file src="src/ios/JREngage/Classes/JREngage.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JREngage.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JREngage.m" target-dir="JREngage/Classes"  compiler-flags="-fno-objc-arc" />
         <header-file src="src/ios/JREngage/Classes/JREngageError.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JREngageError.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JREngageError.m" target-dir="JREngage/Classes" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JREngage/Classes/JREngagePhonegapPlugin.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JREngagePhonegapPlugin.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JREngagePhonegapPlugin.m" target-dir="JREngage/Classes" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JREngage/Classes/JRInfoBar.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JRInfoBar.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JRInfoBar.m" target-dir="JREngage/Classes" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JREngage/Classes/JRPreviewLabel.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JRPreviewLabel.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JRPreviewLabel.m" target-dir="JREngage/Classes" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JREngage/Classes/JRProvidersController.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JRProvidersController.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JRProvidersController.m" target-dir="JREngage/Classes" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JREngage/Classes/JRPublishActivityController.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JRPublishActivityController.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JRPublishActivityController.m" target-dir="JREngage/Classes" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JREngage/Classes/JRSessionData.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JRSessionData.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JRSessionData.m" target-dir="JREngage/Classes" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JREngage/Classes/JRUserInterfaceMaestro.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JRUserInterfaceMaestro.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JRUserInterfaceMaestro.m" target-dir="JREngage/Classes" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JREngage/Classes/JRUserLandingController.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JRUserLandingController.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JRUserLandingController.m" target-dir="JREngage/Classes" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JREngage/Classes/JRWebViewController.h" target-dir="JREngage/Classes" />
-        <source-file src="src/ios/JREngage/Classes/JRWebViewController.m" target-dir="JREngage/Classes" />
+        <source-file src="src/ios/JREngage/Classes/JRWebViewController.m" target-dir="JREngage/Classes" compiler-flags="-fno-objc-arc"/>
 
         <header-file src="src/ios/JRConnectionManager/JRConnectionManager.h" target-dir="JRConnectionManager" />
-        <source-file src="src/ios/JRConnectionManager/JRConnectionManager.m" target-dir="JRConnectionManager" />
+        <source-file src="src/ios/JRConnectionManager/JRConnectionManager.m" target-dir="JRConnectionManager" compiler-flags="-fno-objc-arc"/>
 
         <header-file src="src/ios/JSONKit/JSONKit.h" target-dir="JSONKit" />
-        <source-file src="src/ios/JSONKit/JSONKit.m" target-dir="JSONKit" />
+        <source-file src="src/ios/JSONKit/JSONKit.m" target-dir="JSONKit" compiler-flags="-fno-objc-arc"/>
 
         <header-file src="src/ios/Security/SFHFKeychainUtils.h" target-dir="Security" />
-        <source-file src="src/ios/Security/SFHFKeychainUtils.m" target-dir="Security" />
+        <source-file src="src/ios/Security/SFHFKeychainUtils.m" target-dir="Security" compiler-flags="-fno-objc-arc"/>
 
         <header-file src="src/ios/JRCapture/Classes/CaptureRecordInterface/JRCaptureApidInterface.h" target-dir="JRCapture/Classes/CaptureRecordInterface" />
-        <source-file src="src/ios/JRCapture/Classes/CaptureRecordInterface/JRCaptureApidInterface.m" target-dir="JRCapture/Classes/CaptureRecordInterface" />
+        <source-file src="src/ios/JRCapture/Classes/CaptureRecordInterface/JRCaptureApidInterface.m" target-dir="JRCapture/Classes/CaptureRecordInterface" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JRCapture/Classes/CaptureRecordInterface/JRCaptureData.h" target-dir="JRCapture/Classes/CaptureRecordInterface" />
-        <source-file src="src/ios/JRCapture/Classes/CaptureRecordInterface/JRCaptureData.m" target-dir="JRCapture/Classes/CaptureRecordInterface" />
+        <source-file src="src/ios/JRCapture/Classes/CaptureRecordInterface/JRCaptureData.m" target-dir="JRCapture/Classes/CaptureRecordInterface" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JRCapture/Classes/CaptureRecordInterface/JRNSDate+ISO8601_CaptureDateTimeString.h" target-dir="JRCapture/Classes/CaptureRecordInterface" />
-        <source-file src="src/ios/JRCapture/Classes/CaptureRecordInterface/JRNSDate+ISO8601_CaptureDateTimeString.m" target-dir="JRCapture/Classes/CaptureRecordInterface" />
+        <source-file src="src/ios/JRCapture/Classes/CaptureRecordInterface/JRNSDate+ISO8601_CaptureDateTimeString.m" target-dir="JRCapture/Classes/CaptureRecordInterface" compiler-flags="-fno-objc-arc"/>
 
         <header-file src="src/ios/JRCapture/Classes/CaptureUserModel/JRCaptureObject.h" target-dir="JRCapture/Classes/CaptureUserModel" />
-        <source-file src="src/ios/JRCapture/Classes/CaptureUserModel/JRCaptureObject.m" target-dir="JRCapture/Classes/CaptureUserModel" />
+        <source-file src="src/ios/JRCapture/Classes/CaptureUserModel/JRCaptureObject.m" target-dir="JRCapture/Classes/CaptureUserModel" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JRCapture/Classes/CaptureUserModel/JRCaptureObject+Internal.h" target-dir="JRCapture/Classes/CaptureUserModel" />
         <header-file src="src/ios/JRCapture/Classes/CaptureUserModel/JRCaptureUser.h" target-dir="JRCapture/Classes/CaptureUserModel" />
-        <source-file src="src/ios/JRCapture/Classes/CaptureUserModel/JRCaptureUser.m" target-dir="JRCapture/Classes/CaptureUserModel" />
+        <source-file src="src/ios/JRCapture/Classes/CaptureUserModel/JRCaptureUser.m" target-dir="JRCapture/Classes/CaptureUserModel" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JRCapture/Classes/CaptureUserModel/JRCaptureUser+Extras.h" target-dir="JRCapture/Classes/CaptureUserModel" />
-        <source-file src="src/ios/JRCapture/Classes/CaptureUserModel/JRCaptureUser+Extras.m" target-dir="JRCapture/Classes/CaptureUserModel" />
+        <source-file src="src/ios/JRCapture/Classes/CaptureUserModel/JRCaptureUser+Extras.m" target-dir="JRCapture/Classes/CaptureUserModel" compiler-flags="-fno-objc-arc"/>
 
         <header-file src="src/ios/JRCapture/Classes/EngageWrapper/JRConventionalSignInViewController.h" target-dir="JRCapture/Classes/EngageWrapper" />
-        <source-file src="src/ios/JRCapture/Classes/EngageWrapper/JRConventionalSignInViewController.m" target-dir="JRCapture/Classes/EngageWrapper" />
+        <source-file src="src/ios/JRCapture/Classes/EngageWrapper/JRConventionalSignInViewController.m" target-dir="JRCapture/Classes/EngageWrapper" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JRCapture/Classes/EngageWrapper/JREngageWrapper.h" target-dir="JRCapture/Classes/EngageWrapper" />
-        <source-file src="src/ios/JRCapture/Classes/EngageWrapper/JREngageWrapper.m" target-dir="JRCapture/Classes/EngageWrapper" />
+        <source-file src="src/ios/JRCapture/Classes/EngageWrapper/JREngageWrapper.m" target-dir="JRCapture/Classes/EngageWrapper" compiler-flags="-fno-objc-arc"/>
 
         <header-file src="src/ios/JRCapture/Classes/WebviewWrapper/JRWebviewWrapper.h" target-dir="JRCapture/Classes/WebviewWrapper" />
-        <source-file src="src/ios/JRCapture/Classes/WebviewWrapper/JRWebviewWrapper.m" target-dir="JRCapture/Classes/WebviewWrapper" />
+        <source-file src="src/ios/JRCapture/Classes/WebviewWrapper/JRWebviewWrapper.m" target-dir="JRCapture/Classes/WebviewWrapper" compiler-flags="-fno-objc-arc"/>
 
         <header-file src="src/ios/JRCapture/Classes/JRCapture.h" target-dir="JRCapture/Classes" />
-        <source-file src="src/ios/JRCapture/Classes/JRCapture.m" target-dir="JRCapture/Classes" />
+        <source-file src="src/ios/JRCapture/Classes/JRCapture.m" target-dir="JRCapture/Classes" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JRCapture/Classes/JRCaptureError.h" target-dir="JRCapture/Classes" />
-        <source-file src="src/ios/JRCapture/Classes/JRCaptureError.m" target-dir="JRCapture/Classes" />
+        <source-file src="src/ios/JRCapture/Classes/JRCaptureError.m" target-dir="JRCapture/Classes" compiler-flags="-fno-objc-arc"/>
         <header-file src="src/ios/JRCapture/Classes/JRCaptureTypes.h" target-dir="JRCapture/Classes" />
 	    
         <!-- image resources -->
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_black_135x40.png" target-dir="JREngage/Resources/images/buttons"/>
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_black_280x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_facebook_135x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_facebook_280x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_google_135x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_google_280x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_iosblue_135x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_iosblue_280x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_janrain_135x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_janrain_280x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_linkedin_135x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_linkedin_280x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_myspace_135x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_myspace_280x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_twitter_135x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_twitter_280x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_yahoo_135x40.png" target-dir="JREngage/Resources/images/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images/buttons/button_yahoo_280x40.png" target-dir="JREngage/Resources/images/buttons" />
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_black_135x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_black_280x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_facebook_135x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_facebook_280x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_google_135x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_google_280x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_iosblue_135x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_iosblue_280x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_janrain_135x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_janrain_280x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_linkedin_135x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_linkedin_280x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_myspace_135x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_myspace_280x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_twitter_135x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_twitter_280x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_yahoo_135x40.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/buttons/button_yahoo_280x40.png"/>
 
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_aol_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_blogger_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_facebook_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_flickr_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_foursquare_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_google_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_hyves_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_linkedin_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_live_id_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_livejournal_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_myopenid_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_myspace_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_netlog_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_openid_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_orkut_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_paypal_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_salesforce_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_twitter_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_verisign_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_vzn_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_wordpress_30x30.png" target-dir="JREngage/Resources/images/icons" />
-        <source-file src="src/ios/JREngage/Resources/images/icons/icon_yahoo_30x30.png" target-dir="JREngage/Resources/images/icons" />
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_aol_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_blogger_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_facebook_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_flickr_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_foursquare_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_google_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_hyves_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_linkedin_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_live_id_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_livejournal_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_myopenid_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_myspace_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_netlog_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_openid_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_orkut_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_paypal_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_salesforce_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_twitter_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_verisign_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_vzn_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_wordpress_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons/icon_yahoo_30x30.png"/>
 
-        <source-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_facebook_30x30.png" target-dir="JREngage/Resources/images/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_linkedin_30x30.png" target-dir="JREngage/Resources/images/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_mail_30x30.png" target-dir="JREngage/Resources/images/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_mail_sms_30x30.png" target-dir="JREngage/Resources/images/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_myspace_30x30.png" target-dir="JREngage/Resources/images/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_sms_30x30.png" target-dir="JREngage/Resources/images/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_twitter_30x30.png" target-dir="JREngage/Resources/images/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_yahoo_30x30.png" target-dir="JREngage/Resources/images/icons_bw" />
+        <resource-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_facebook_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_linkedin_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_mail_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_mail_sms_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_myspace_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_sms_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_twitter_30x30.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/icons_bw/icon_bw_yahoo_30x30.png"/>
 
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_aol_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_blogger_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_facebook_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_flickr_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_foursquare_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_google_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_hyves_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_linkedin_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_live_id_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_livejournal_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_myopenid_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_myspace_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_netlog_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_openid_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_orkut_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_paypal_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_salesforce_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_twitter_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_verisign_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_vzn_280x65.png" target-dir="JREngage/Resources/images/logos" />
-        <source-file src="src/ios/JREngage/Resources/images/logos/logo_yahoo_280x65.png" target-dir="JREngage/Resources/images/logos" />
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_aol_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_blogger_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_facebook_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_flickr_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_foursquare_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_google_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_hyves_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_linkedin_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_live_id_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_livejournal_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_myopenid_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_myspace_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_netlog_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_openid_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_orkut_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_paypal_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_salesforce_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_twitter_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_verisign_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_vzn_280x65.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/logos/logo_yahoo_280x65.png"/>
 
-        <source-file src="src/ios/JREngage/Resources/images/other/check_mark.png" target-dir="JREngage/Resources/images/other" />
-        <source-file src="src/ios/JREngage/Resources/images/other/media_view_background_bottom.png" target-dir="JREngage/Resources/images/other" />
-        <source-file src="src/ios/JREngage/Resources/images/other/media_view_background_top.png" target-dir="JREngage/Resources/images/other" />
-        <source-file src="src/ios/JREngage/Resources/images/other/music_note.jpg" target-dir="JREngage/Resources/images/other" />
-        <source-file src="src/ios/JREngage/Resources/images/other/profilepic_placeholder.png" target-dir="JREngage/Resources/images/other" />
-        <source-file src="src/ios/JREngage/Resources/images/other/triangle_icon.png" target-dir="JREngage/Resources/images/other" />
+        <resource-file src="src/ios/JREngage/Resources/images/other/check_mark.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/other/media_view_background_bottom.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/other/media_view_background_top.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/other/music_note.jpg"/>
+        <resource-file src="src/ios/JREngage/Resources/images/other/profilepic_placeholder.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images/other/triangle_icon.png"/>
 
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_black_135x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_black_280x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_facebook_135x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_facebook_280x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_google_135x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_google_280x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_iosblue_135x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_iosblue_280x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_janrain_135x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_janrain_280x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_linkedin_135x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_linkedin_280x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_myspace_135x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_myspace_280x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_twitter_135x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_twitter_280x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_yahoo_135x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/buttons/button_yahoo_280x40@2x.png" target-dir="JREngage/Resources/images-2x/buttons" />
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_black_135x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_black_280x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_facebook_135x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_facebook_280x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_google_135x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_google_280x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_iosblue_135x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_iosblue_280x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_janrain_135x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_janrain_280x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_linkedin_135x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_linkedin_280x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_myspace_135x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_myspace_280x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_twitter_135x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_twitter_280x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_yahoo_135x40@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/buttons/button_yahoo_280x40@2x.png"/>
 
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_aol_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_blogger_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_facebook_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_flickr_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_foursquare_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_google_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_hyves_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_linkedin_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_live_id_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_livejournal_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_myopenid_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_myspace_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_netlog_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_openid_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_orkut_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_paypal_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_salesforce_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_twitter_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_verisign_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_vzn_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_wordpress_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons/icon_yahoo_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons" />
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_aol_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_blogger_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_facebook_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_flickr_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_foursquare_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_google_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_hyves_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_linkedin_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_live_id_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_livejournal_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_myopenid_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_myspace_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_netlog_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_openid_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_orkut_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_paypal_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_salesforce_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_twitter_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_verisign_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_vzn_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_wordpress_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons/icon_yahoo_30x30@2x.png"/>
 
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_facebook_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_linkedin_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_mail_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_mail_sms_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_myspace_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_sms_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_twitter_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons_bw" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_yahoo_30x30@2x.png" target-dir="JREngage/Resources/images-2x/icons_bw" />
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_facebook_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_linkedin_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_mail_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_mail_sms_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_myspace_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_sms_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_twitter_30x30@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/icons_bw/icon_bw_yahoo_30x30@2x.png"/>
 
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_aol_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_blogger_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_facebook_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_flickr_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_foursquare_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_google_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_hyves_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_linkedin_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_live_id_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_livejournal_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_myopenid_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_myspace_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_netlog_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_openid_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_orkut_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_paypal_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_salesforce_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_twitter_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_verisign_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_vzn_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/logos/logo_yahoo_280x65@2x.png" target-dir="JREngage/Resources/images-2x/logos" />
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_aol_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_blogger_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_facebook_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_flickr_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_foursquare_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_google_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_hyves_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_linkedin_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_live_id_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_livejournal_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_myopenid_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_myspace_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_netlog_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_openid_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_orkut_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_paypal_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_salesforce_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_twitter_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_verisign_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_vzn_280x65@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/logos/logo_yahoo_280x65@2x.png"/>
 
-        <source-file src="src/ios/JREngage/Resources/images-2x/other/check_mark@2x.png" target-dir="JREngage/Resources/images-2x/other" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/other/media_view_background_bottom@2x.png" target-dir="JREngage/Resources/images-2x/other" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/other/media_view_background_top@2x.png" target-dir="JREngage/Resources/images-2x/other" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/other/music_note@2x.jpg" target-dir="JREngage/Resources/images-2x/other" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/other/profilepic_placeholder@2x.png" target-dir="JREngage/Resources/images-2x/other" />
-        <source-file src="src/ios/JREngage/Resources/images-2x/other/triangle_icon@2x.png" target-dir="JREngage/Resources/images-2x/other" />
+        <resource-file src="src/ios/JREngage/Resources/images-2x/other/check_mark@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/other/media_view_background_bottom@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/other/media_view_background_top@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/other/music_note@2x.jpg"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/other/profilepic_placeholder@2x.png"/>
+        <resource-file src="src/ios/JREngage/Resources/images-2x/other/triangle_icon@2x.png"/>
 
-        <source-file src="src/ios/JREngage/Resources/xibs/JR    ProvidersController.xib" target-dir="JREngage/Resources/xlibs" />
-        <source-file src="src/ios/JREngage/Resources/xibs/JRPublishActivityController.xib" target-dir="JREngage/Resources/xlibs" />
-        <source-file src="src/ios/JREngage/Resources/xibs/JRUserLandingController.xib" target-dir="JREngage/Resources/xlibs" />
-        <source-file src="src/ios/JREngage/Resources/xibs/JRWebViewController.xib" target-dir="JREngage/Resources/xlibs" />
+        <resource-file src="src/ios/JREngage/Resources/xibs/JRProvidersController.xib" />
+        <resource-file src="src/ios/JREngage/Resources/xibs/JRPublishActivityController.xib" />
+        <resource-file src="src/ios/JREngage/Resources/xibs/JRUserLandingController.xib" />
+        <resource-file src="src/ios/JREngage/Resources/xibs/JRWebViewController.xib" />
 
-        <framework src="Foundation.framework" />
-        <framework src="Security.framework" />
-        <framework src="UIKit.framework" />
-        <framework src="MessageUI.framework" />
     </platform>
 </plugin>

@@ -45,14 +45,14 @@
 #import "JRActivityObject.h"
 #import "JRConnectionManager.h"
 
-#ifdef PHONEGAP_OR_CORDOVA
+// #ifdef PHONEGAP_OR_CORDOVA
 
-@interface JREngagePhonegapPlugin ()
-@property (nonatomic, retain) NSMutableDictionary *fullAuthenticationResponse;
-@property (nonatomic, retain) NSMutableDictionary *fullSharingResponse;
-@property (nonatomic, retain) NSMutableArray      *authenticationBlobs;
-@property (nonatomic, retain) NSMutableArray      *shareBlobs;
-@end
+// @interface JREngagePhonegapPlugin ()
+// @property (nonatomic, retain) NSMutableDictionary *fullAuthenticationResponse;
+// @property (nonatomic, retain) NSMutableDictionary *fullSharingResponse;
+// @property (nonatomic, retain) NSMutableArray      *authenticationBlobs;
+// @property (nonatomic, retain) NSMutableArray      *shareBlobs;
+// @end
 
 @implementation JREngagePhonegapPlugin
 @synthesize callbackID;
@@ -67,27 +67,30 @@
     return self;
 }
 
-- (void)print:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+//- (void)print:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+- (void)print:(CDVInvokedUrlCommand*)command
 {
-    self.callbackID = [arguments pop];
+    self.callbackID = command.callbackId;
 
     DLog(@"print arguments: %@", callbackID);
 
-    NSString     *printString  = [arguments objectAtIndex:0];
+    NSString *printString  = [command.arguments objectAtIndex:0];
 
     PCPluginResult *pluginResult = [PCPluginResult resultWithStatus:PCCommandStatus_OK
                                                     messageAsString:printString];
 
     // TODO: Nathan, what were you testing here?
     // if([printString isEqualToString:@"Hello World }]%20"] == YES)
-    if([printString isEqualToString:@"Hello World"] == YES)
-    {
-        [self writeJavascript:[pluginResult toSuccessCallbackString:self.callbackID]];
-    }
-    else
-    {
-        [self writeJavascript:[pluginResult toErrorCallbackString:self.callbackID]];
-    }
+    // if([printString isEqualToString:@"Hello World"] == YES)
+    // {
+    //     [self writeJavascript:[pluginResult toSuccessCallbackString:self.callbackID]];
+    //     [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackID];
+    // }
+    // else
+    // {
+    //     [self writeJavascript:[pluginResult toErrorCallbackString:self.callbackID]];
+    // }
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackID];
 }
 
 - (void)thenFinish
@@ -104,7 +107,8 @@
     PCPluginResult* pluginResult = [PCPluginResult resultWithStatus:PCCommandStatus_OK
                                                     messageAsString:message];
 
-    [self writeJavascript:[pluginResult toSuccessCallbackString:self.callbackID]];
+    //[self writeJavascript:[pluginResult toSuccessCallbackString:self.callbackID]];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackID];
     [self thenFinish];
 }
 
@@ -113,7 +117,8 @@
     PCPluginResult* pluginResult = [PCPluginResult resultWithStatus:PCCommandStatus_ERROR
                                                     messageAsString:message];
 
-    [self writeJavascript:[pluginResult toErrorCallbackString:self.callbackID]];
+    //[self writeJavascript:[pluginResult toErrorCallbackString:self.callbackID]];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackID];
     [self thenFinish];
 }
 
@@ -149,47 +154,48 @@
     self.fullAuthenticationResponse = nil;
 }
 
-- (void)initializeJREngage:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+//- (void)initializeJREngage:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+- (void)initializeJREngage:(CDVInvokedUrlCommand*)command
 {
     DLog(@"");
 
-    self.callbackID = [arguments pop];
+    self.callbackID = command.callbackId;
 
     NSString *appId;
-    if ([arguments count])
-        appId = [arguments objectAtIndex:0];
-    else
-    {
+    if ([command.arguments count]){
+        //appId = [arguments objectAtIndex:0];
+        appId = [command.arguments objectAtIndex:0];
+    }else{
         [self finishWithFailureMessage:[self stringFromCode:JRMissingAppIdError
                                                  andMessage:@"Missing appId in call to initialize"]];
-
         return;
     }
 
     NSString *tokenUrl = nil;
-    if ([arguments count] > 1)
-        tokenUrl = [arguments objectAtIndex:1];
+    // if ([arguments count] > 1)
+    if ([command.arguments count] > 1){
+        tokenUrl = [command.arguments objectAtIndex:1];
+    }
+    // NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/JREngage-Info.plist"];
+    // NSMutableDictionary *infoPlist =
+    //         [NSMutableDictionary dictionaryWithDictionary:
+    //                 [NSDictionary dictionaryWithContentsOfFile:path]];
 
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/JREngage-Info.plist"];
-    NSMutableDictionary *infoPlist =
-            [NSMutableDictionary dictionaryWithDictionary:
-                    [NSDictionary dictionaryWithContentsOfFile:path]];
-
-    NSMutableString *version = [NSMutableString stringWithString:[infoPlist objectForKey:@"CFBundleShortVersionString"]];
+    // NSMutableString *version = [NSMutableString stringWithString:[infoPlist objectForKey:@"CFBundleShortVersionString"]];
     //NSString *newVersion = @"";
 
-#ifdef PHONEGAP_FRAMEWORK
-    if (![version hasSuffix:@":phonegap"])
-        [version appendString:@":phonegap"];////newVersion = [NSString stringWithFormat:@"%@:%@", version, @":phonegap"];
-#else
-#ifdef CORDOVA_FRAMEWORK
-    if (![version hasSuffix:@":cordova"])
-        [version appendString:@":cordova"];//newVersion = [NSString stringWithFormat:@"%@:%@", version, @"cordova"];
-#endif
-#endif
+// #ifdef PHONEGAP_FRAMEWORK
+//     if (![version hasSuffix:@":phonegap"])
+//         [version appendString:@":phonegap"];////newVersion = [NSString stringWithFormat:@"%@:%@", version, @":phonegap"];
+// #else
+// #ifdef CORDOVA_FRAMEWORK
+//     if (![version hasSuffix:@":cordova"])
+//         [version appendString:@":cordova"];//newVersion = [NSString stringWithFormat:@"%@:%@", version, @"cordova"];
+// #endif
+// #endif
 
-    [infoPlist setObject:version forKey:@"CFBundleShortVersionString"];
-    [infoPlist writeToFile:path atomically:YES];
+    // [infoPlist setObject:version forKey:@"CFBundleShortVersionString"];
+    // [infoPlist writeToFile:path atomically:YES];
 
     [JREngage setEngageAppId:appId tokenUrl:tokenUrl andDelegate:self];
 //    if (!jrEngage)
@@ -203,25 +209,29 @@
     [self finishWithSuccessMessage:@"{'stat':'ok','message':'Initializing JREngage...'}"];
 }
 
-- (void)showAuthenticationDialog:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+//- (void)showAuthenticationDialog:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+- (void)showAuthenticationDialog:(CDVInvokedUrlCommand*)command
 {
     DLog(@"");
 
-    self.callbackID = [arguments pop];
+    //self.callbackID = [arguments pop];
+    self.callbackID = command.callbackId;
 
     [JREngage showAuthenticationDialog];
 }
 
-- (void)showSharingDialog:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+//- (void)showSharingDialog:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+- (void)showSharingDialog:(CDVInvokedUrlCommand*)command
 {
     DLog(@"");
 
-    self.callbackID = [arguments pop];
+    //self.callbackID = [arguments pop];
+    self.callbackID = command.callbackId;
     weAreSharing    = YES;
 
     NSString *activityString;
-    if ([arguments count])
-        activityString = [arguments objectAtIndex:0];
+    if ([command.arguments count])
+        activityString = [command.arguments objectAtIndex:0];
     else
     {
         [self finishWithFailureMessage:[self stringFromCode:JRPublishErrorActivityNil
@@ -384,27 +394,4 @@
     [super dealloc];
 }
 @end
-#endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// #endif

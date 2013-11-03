@@ -38,16 +38,16 @@ var exec = require('cordova/exec');
 
 module.exports = {
   print : function(message, success, fail){
-    exec(success, fail, 'JREngagePlugin', 'print', [message]);
+    exec(success, fail, 'JREngage', 'print', [message]);
   },
   initialize : function(appid, tokenurl, success, fail){
-    exec(success, fail, 'JREngagePlugin', 'initializeJREngage', [appid, tokenurl]);
+    exec(success, fail, 'JREngage', 'initializeJREngage', [appid, tokenurl]);
   },
   showAuthentication : function(success, fail){
-    exec(success, fail, 'JREngagePlugin', 'showAuthenticationDialog', []);
+    exec(success, fail, 'JREngage', 'showAuthenticationDialog', []);
   },
   showSharing : function(activity, success, fail){
-    exec(success, fail, 'JREngagePlugin', 'showSharingDialog', [activity]);
+    exec(success, fail, 'JREngage', 'showSharingDialog', [activity]);
   },
   //error codes
   JREngagePhonegapError                :  -1,
