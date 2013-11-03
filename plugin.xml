@@ -21,7 +21,7 @@
         		<param name="ios-package" value="JREngage"/>
         	</feature>
         </config-file>
-        <header-file src="src/ios/JREngage/Classes/JRActivityObject.h" target-dir="JREngage/Classes"/>
+        <header-file src="src/ios/JREngage/Classes/JRActivityObject.h" target-dir="JREngage/Classes" />
         <source-file src="src/ios/JREngage/Classes/JRActivityObject.m" target-dir="JREngage/Classes" />
         <header-file src="src/ios/JREngage/Classes/JREngage+CustomInterface.h" target-dir="JREngage/Classes" />
         <source-file src="src/ios/JREngage/Classes/JREngage+CustomInterface.m" target-dir="JREngage/Classes" />
@@ -48,10 +48,10 @@
         <header-file src="src/ios/JREngage/Classes/JRWebViewController.h" target-dir="JREngage/Classes" />
         <source-file src="src/ios/JREngage/Classes/JRWebViewController.m" target-dir="JREngage/Classes" />
 
-        <header-file src="src/ios/JRConnectionManager/JRConnectionManager.h" target-dir="JRConnectionManager"/>
+        <header-file src="src/ios/JRConnectionManager/JRConnectionManager.h" target-dir="JRConnectionManager" />
         <source-file src="src/ios/JRConnectionManager/JRConnectionManager.m" target-dir="JRConnectionManager" />
 
-        <header-file src="src/ios/JSONKit/JSONKit.h" target-dir="JSONKit"/>
+        <header-file src="src/ios/JSONKit/JSONKit.h" target-dir="JSONKit" />
         <source-file src="src/ios/JSONKit/JSONKit.m" target-dir="JSONKit" />
 
         <header-file src="src/ios/Security/SFHFKeychainUtils.h" target-dir="Security" />
@@ -247,10 +247,14 @@
         <source-file src="src/ios/JREngage/Resources/images-2x/other/profilepic_placeholder@2x.png" target-dir="JREngage/Resources/images-2x/other" />
         <source-file src="src/ios/JREngage/Resources/images-2x/other/triangle_icon@2x.png" target-dir="JREngage/Resources/images-2x/other" />
 
-        <source-file src="src/ios/JREngage/Resources/xibs/JRProvidersController.xib" target-dir="JREngage/Resources/xlibs" />
+        <source-file src="src/ios/JREngage/Resources/xibs/JR    ProvidersController.xib" target-dir="JREngage/Resources/xlibs" />
         <source-file src="src/ios/JREngage/Resources/xibs/JRPublishActivityController.xib" target-dir="JREngage/Resources/xlibs" />
         <source-file src="src/ios/JREngage/Resources/xibs/JRUserLandingController.xib" target-dir="JREngage/Resources/xlibs" />
         <source-file src="src/ios/JREngage/Resources/xibs/JRWebViewController.xib" target-dir="JREngage/Resources/xlibs" />
 
+        <framework src="Foundation.framework" />
+        <framework src="Security.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="MessageUI.framework" />
     </platform>
 </plugin>
