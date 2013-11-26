@@ -148,9 +148,9 @@
 {
     if (!authenticationBlobs)
         self.authenticationBlobs = [NSMutableArray arrayWithCapacity:5];
-
-    [authenticationBlobs addObject:fullAuthenticationResponse];
-
+    if(fullAuthenticationResponse){
+        [authenticationBlobs addObject:fullAuthenticationResponse];
+    }
     self.fullAuthenticationResponse = nil;
 }
 

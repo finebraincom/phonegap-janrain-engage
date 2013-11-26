@@ -1534,11 +1534,11 @@ Please try again later."
                                                                    image:[UIImage imageNamed:imagePath]
                                                                      tag:[providerTabArr count]] autorelease];
 
-        [providerTabArr insertObject:providerTab atIndex:[providerTabArr count]];
-
-        if ([provider isEqualToReturningProvider:[sessionData returningSocialProvider]])
-            indexOfLastUsedProvider = i;
-
+        if(providerTab){ //iurii: protection for nil
+            [providerTabArr insertObject:providerTab atIndex:[providerTabArr count]];
+            if ([provider isEqualToReturningProvider:[sessionData returningSocialProvider]])
+                indexOfLastUsedProvider = i;
+        }
         [provider release];
     }
 
@@ -1552,8 +1552,9 @@ Please try again later."
                                                                         [NSString stringWithFormat:@"icon_bw_%@_30x30.png",
                                                                          simpleStrArray[((int)emailAndOrSmsIndex + 2)]]]
                                                                    tag:[providerTabArr count]] autorelease];
-
-        [providerTabArr insertObject:emailTab atIndex:[providerTabArr count]];
+        if(emailTab){// protection for nil
+            [providerTabArr insertObject:emailTab atIndex:[providerTabArr count]];
+        }
     }
 
     [myTabBar setItems:providerTabArr animated:YES];

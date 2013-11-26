@@ -553,8 +553,13 @@ static JREngage* singleton = nil;
     NSArray *delegatesCopy = [NSArray arrayWithArray:delegates];
     for (id<JREngageSharingDelegate> delegate in delegatesCopy)
     {
+        @try{
         if ([delegate respondsToSelector:@selector(sharingDidSucceedForActivity:forProvider:)])
             [delegate sharingDidSucceedForActivity:activity forProvider:provider];
+        }
+        @catch(NSException* ex){
+            //iurii: ignore errors
+        }
     }
 }
 
